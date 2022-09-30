@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveObject01 : MonoBehaviour
+public class copyRotation : MonoBehaviour
 {
-    [SerializeField] Vector3 moveDirection;
+    public Transform rotationToCopy;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
-    
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position += moveDirection;
+        transform.rotation = Quaternion.Euler(-90,rotationToCopy.eulerAngles.y,0);
     }
 }
